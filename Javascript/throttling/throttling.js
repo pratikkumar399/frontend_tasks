@@ -16,5 +16,3 @@ const handleScroll = () => {
 };
 
 window.addEventListener('scroll', throttle(handleScroll, 1000));
-
-
