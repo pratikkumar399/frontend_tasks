@@ -1,18 +1,51 @@
 // simple throttling
 
-function throttle(func, delay) {
-    let lastCall = 0;
+function throttle(functionToBePassed, delay) {
+    // to keep track if the event has occurred or not yet
+    let startId = null;
+    // receive the params
     return function (...args) {
-        const now = new Date().getTime();
-        if (now - lastCall >= delay) {
-            lastCall = now;
+        // if the event hasn't occurred yet
+        if (!startId) {
+            // invoke the function
+            functionToBePassed(...args);
+
+            // a startId get assigned and remains until the delay has passed
+            startId = setTimeout(() => {
+                // as soon as the timer ends make the startId null
+                startId = null;
+            }, delay);
+        }
+    }
+}
+
+
+// throttling function to preserve the last event
+function throttle(func, delay) {
+    let startId = null;
+    let lastArgs = null;
+
+    return function (...args) {
+        if (!startId) {
             func(...args);
+            startId = setTimeout(() => {
+                if (lastArgs) {
+                    func(...lastArgs);
+                    lastArgs = null; // Clear after execution
+                }
+                startId = null; // Reset so it can be called again
+            }, delay);
+        } else {
+            lastArgs = args; // Store the latest args
         }
     };
 }
 
-const handleScroll = () => {
-    console.log('Scroll event triggered');
-};
+// Example
+const throttledFunc = throttle((msg) => console.log(msg), 2000);
 
-window.addEventListener('scroll', throttle(handleScroll, 1000));
+throttledFunc("A"); // ✅ Executed immediately
+throttledFunc("B"); // ❌ Ignored but stored
+throttledFunc("C"); // ✅ "C" is now the latest stored
+
+// After 2 sec: "C" is executed ✅
