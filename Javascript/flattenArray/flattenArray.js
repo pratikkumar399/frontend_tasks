@@ -18,7 +18,7 @@ function flat1(arr, depth = 1) {
     let ans = [];
     arr.forEach(item => {
         if (Array.isArray(item) && depth > 0) {
-            ans.push(...flat(item, depth - 1));
+            ans.push(...flat1(item, depth - 1));
         } else {
             ans.push(item);
         }
