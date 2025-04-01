@@ -6,7 +6,6 @@ function dfsWithStack(graph, source) {
         let node = stack.pop();
 
         if (!visited.has(node)) {
-            console.log(node);
             visited.add(node);
 
             for (let neighbor of graph[node]) {
