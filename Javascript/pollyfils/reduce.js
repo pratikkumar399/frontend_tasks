@@ -5,18 +5,20 @@
  * @param {U} [initialValue]
  * @return {Array<U>}
  */
+
+
 Array.prototype.myReduce = function (callbackFn, initialValue) {
     let array = Object(this);
     let len = array.length;
     let accumulator;
 
     const noInitialValue = initialValue === undefined;
-
-    if (initialValue === undefined && len === 0) {
+    
+    if (noInitialValue && len === 0) {
         throw new TypeError("Reduce of empty array with no initial value");
     }
 
-    if (initialValue === undefined) {
+    if (noInitialValue) {
         accumulator = array[0];
     } else {
         accumulator = initialValue;
