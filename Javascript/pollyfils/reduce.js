@@ -7,6 +7,9 @@
  */
 
 
+userDoc
+
+
 Array.prototype.myReduce = function (callbackFn, initialValue) {
     let array = Object(this);
     let len = array.length;
