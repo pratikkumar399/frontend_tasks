@@ -1,41 +1,31 @@
-function throttleLeadingTrailing(func, delay) {
-    let timerId = null;
-    let lastArgs = null;
-    let lastContext = null;
-    let called = false;
+function throttle(fn, delay, option = { leading: true, trailing: true }) {
+    const { leading, trailing } = option;
+    let lastTimerId;
+    let lastArgs;
 
-    return function () {
-        const context = this;
-        const args = arguments;
+    return function (...args) {
+        const waitFn = () => {
+            if (trailing && lastArgs) {
+                fn.apply(this, lastArgs); // or fn(...args);
+                lastArgs = null; // reset lastArgs
+                lastTimerId = setTimeout(waitFn, delay); // executes the 
+            } else {
+                lastTimerId = null;
+            }
+        };
 
-        if (!called) {
-            func.apply(context, args); // Leading call
-            called = true;
-
-            timerId = setTimeout(function () {
-                if (lastArgs) {
-                    func.apply(lastContext, lastArgs); // Trailing call
-                    lastArgs = null;
-                    lastContext = null;
-                }
-                called = false;
-                timerId = null;
-            }, delay);
+        // case : leading case
+        if (!lastTimerId && leading) {
+            // call immediately
+            fn.apply(this, args);
         } else {
-            // Store last call for trailing execution
+            // storing the last arguments for the trailing case
             lastArgs = args;
-            lastContext = context;
+        }
+
+        // case : trailing case
+        if (!lastTimerId) {
+            lastTimerId = setTimeout(waitFn, delay);
         }
     };
 }
-
-
-function logMessage(msg) {
-    console.log("Logged:", msg);
-}
-
-const throttledLog = throttleLeadingTrailing(logMessage, 2000);
-
-throttledLog("A"); // Immediately logs "A"
-throttledLog("B");
-throttledLog("C"); // After 2 seconds, logs "C"
