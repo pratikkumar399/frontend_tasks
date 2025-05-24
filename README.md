@@ -14,5 +14,5 @@ What this repository contains:
 - [Throttling](/Javascript/throttling)
 
 ## DSA Questions
-- [Binary Search](/DSAlgoForFrontend/BinarySearch)
-- [Graphs](/DSAlgoForFrontend/Graph)
+- [Binary Search](/DsAlgoForFrontend/BinarySearch)
+- [Graphs](/DsAlgoForFrontend/Graph)
