@@ -50,6 +50,3 @@ cd frontend_tasks
 Happy Learning! 🎯
 Feel free to contribute by submitting PRs.
 
----
-
-Let me know if you want badges, a logo, or GIFs added to spice it up even more.
