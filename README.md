@@ -1,7 +1,3 @@
-Here’s a cleaner and more visually appealing version of your `README.md`:
-
----
-
 # 🧠 Frontend Tasks Repository
 
 A collection of frontend interview essentials and coding patterns. This repo includes:
