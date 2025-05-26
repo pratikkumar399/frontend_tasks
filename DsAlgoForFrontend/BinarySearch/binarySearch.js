@@ -1,11 +1,16 @@
-function binarySearch(arr, target) {
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function (arr, target) {
     let start = 0;
     let end = arr.length - 1;
 
     while (start <= end) {
         let mid = Math.floor(start + (end - start) / 2);
         if (arr[mid] === target) {
-            return true;
+            return mid;
         }
         else if (arr[mid] < target) {
             start = mid + 1;
@@ -14,7 +19,7 @@ function binarySearch(arr, target) {
             end = mid - 1;
         }
     }
-    return false;
-}
+    return -1;
+};
 
-console.log(binarySearch([1, 2, 3, 4, 5], 3)); // true
+console.log(binarySearch([1, 2, 3, 4, 5], 3)); // 2
