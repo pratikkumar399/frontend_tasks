@@ -28,6 +28,7 @@ A collection of frontend interview essentials and coding patterns. This repo inc
 | --------------------------------------------------- | ------------------------------------- |
 | [`Binary Search`](./DsAlgoForFrontend/BinarySearch) | Efficiently search sorted arrays      |
 | [`Graphs`](./DsAlgoForFrontend/Graph)               | Traverse and explore graph structures |
+| [`Recursion and Backtracking`](./DsAlgoForFrontend/recursionBacktracking)               | Solve questions using recursion and backtracking |
 
 ---
 
