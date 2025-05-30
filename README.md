@@ -1,53 +1,37 @@
-# 🧠 Frontend Tasks Repository
+# Frontend Tasks Repository
 
-A collection of frontend interview essentials and coding patterns. This repo includes:
+A comprehensive collection of essential frontend interview topics and coding patterns. This repository covers:
 
-* 🔍 Data Structures & Algorithms in JavaScript
-* 💡 Core JavaScript Concepts
-* 🧪 Output-based JS Snippets
-* ⚛️ React Practice Examples
+* JavaScript concepts and utilities
+* Data structures and algorithms tailored for frontend development
+* Output-based JavaScript questions
+* Practical React examples
 
----
 
-## 📁 JavaScript Concepts
 
-| Topic                                                           | Description                                                           |
-| --------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [`Currying`](./Javascript/currying/currying.js)                 | Transforming a function with multiple arguments into nested functions |
-| [`Debouncing`](./Javascript/debouncing/debouncing.js)           | Optimizing performance by limiting rapid function calls               |
-| [`Events in JS`](./Javascript/eventsInJs/eventsInJs.js)         | Deep dive into JavaScript event handling                              |
-| [`Flatten an Array`](./Javascript/flattenArray/flattenArray.js) | Recursively flatten nested arrays                                     |
-| [`Polyfills`](./Javascript/polyfills)                           | Custom implementations of native JS features                          |
-| [`Throttling`](./Javascript/throttling)                         | Controlling function execution frequency                              |
+## JavaScript Concepts
 
----
+| Topic                                                         | Description                                                        |
+| ------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Currying](./Javascript/currying/currying.js)                 | Transform a function with multiple arguments into nested functions |
+| [Debouncing](./Javascript/debouncing/debouncing.js)           | Improve performance by limiting the rate of function execution     |
+| [Events in JavaScript](./Javascript/eventsInJs/eventsInJs.js) | Deep dive into how JavaScript handles events                       |
+| [Flatten an Array](./Javascript/flattenArray/flattenArray.js) | Recursively flatten deeply nested arrays                           |
+| [Polyfills](./Javascript/polyfills)                           | Manual implementations of native JavaScript features               |
+| [Throttling](./Javascript/throttling)                         | Control the rate at which a function is called                     |
 
-## 🧩 DSA for Frontend
 
-| Topic                                               | Description                           |
-| --------------------------------------------------- | ------------------------------------- |
-| [`Binary Search`](./DsAlgoForFrontend/BinarySearch) | Efficiently search sorted arrays      |
-| [`Graphs`](./DsAlgoForFrontend/Graph)               | Traverse and explore graph structures |
-| [`Recursion and Backtracking`](./DsAlgoForFrontend/recursionBacktracking)               | Solve questions using recursion and backtracking |
+## DSA for Frontend
 
----
+| Topic                                                                 | Description                                             |
+| --------------------------------------------------------------------- | ------------------------------------------------------- |
+| [Binary Search](./DsAlgoForFrontend/BinarySearch)                     | Efficiently search elements in sorted arrays            |
+| [Graphs](./DsAlgoForFrontend/Graph)                                   | Explore graph traversal techniques                      |
+| [Recursion & Backtracking](./DsAlgoForFrontend/recursionBacktracking) | Solve complex problems using recursion and backtracking |
 
-## ⚛️ React
 
-* 📂 **Nested Folder Structure Example**
-  👉 [View on CodeSandbox](https://codesandbox.io/p/sandbox/silly-blackburn-gygvnx)
+## React Questions
 
----
-
-## 🚀 How to Use
-
-Clone the repo and start exploring:
-
-```bash
-git clone https://github.com/your-username/frontend_tasks.git
-cd frontend_tasks
-```
-
-Happy Learning! 🎯
-Feel free to contribute by submitting PRs.
+* **Nested Folder Structure Example**
+  [View on CodeSandbox](https://codesandbox.io/p/sandbox/silly-blackburn-gygvnx)
 
