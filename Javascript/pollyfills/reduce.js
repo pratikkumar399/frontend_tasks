@@ -11,6 +11,11 @@ Array.prototype.myReduce = function (callbackFn, initialValue) {
     let len = array.length;
     let accumulator;
 
+    if (typeof callbackFn !== 'function') {
+        throw new TypeError(callbackFn + ' is not a function');
+    }
+
+
     const noInitialValue = initialValue === undefined;
     
     if (noInitialValue && len === 0) {
