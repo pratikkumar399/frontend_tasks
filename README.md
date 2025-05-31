@@ -8,6 +8,10 @@ A comprehensive collection of essential frontend interview topics and coding pat
 * Practical React examples
 
 
+## Checkout JS snippets
+[Js Snippets](./Javascript/JsSnippets.md)
+
+
 
 ## JavaScript Concepts
 
