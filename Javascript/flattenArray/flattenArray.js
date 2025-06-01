@@ -25,3 +25,8 @@ function flat1(arr, depth = 1) {
     });
     return ans;
 }
+
+
+// easy method
+const sampleData = [1, 2, 3, [4, 5, [6, 7]]];
+const flatten = sampleData.flat();
