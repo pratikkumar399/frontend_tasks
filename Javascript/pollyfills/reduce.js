@@ -7,34 +7,27 @@
  */
 
 Array.prototype.myReduce = function (callbackFn, initialValue) {
-    let array = Object(this);
-    let len = array.length;
-    let accumulator;
-
-    if (typeof callbackFn !== 'function') {
-        throw new TypeError(callbackFn + ' is not a function');
+    if (typeof callbackFn !== "function") {
+        throw new TypeError(callbackFn + " is not a function");
     }
 
+    const arr = this;
+    const hasInitialValue = arguments.length > 1;
+    const len = arr.length;
 
-    const noInitialValue = initialValue === undefined;
-    
-    if (noInitialValue && len === 0) {
+    if (!hasInitialValue && len === 0) {
         throw new TypeError("Reduce of empty array with no initial value");
     }
 
-    if (noInitialValue) {
-        accumulator = array[0];
-    } else {
-        accumulator = initialValue;
-    }
+    let accumulator = hasInitialValue ? initialValue : arr[0];
+    let startIndex = hasInitialValue ? 0 : 1;
 
-    let index = noInitialValue ? 1 : 0;
-
-    for (let i = index; i < len; i++) {
-        if (i in array) {
-            accumulator = callbackFn.call(this, accumulator, array[i], i, array);
+    for (let i = startIndex; i < len; i++) {
+        if (i in arr) {
+            accumulator = callbackFn(accumulator, arr[i], i, arr);
         }
     }
+
     return accumulator;
 };
 

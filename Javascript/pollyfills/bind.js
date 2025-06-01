@@ -4,13 +4,11 @@
  * @return {Function}
  */
 Function.prototype.myBind = function (thisArg, ...argArray) {
-    const originalFn = this;
     const tempFnKey = Symbol("boundFn");
+    const originalFn = this;
 
-    return function boundFunction(...laterArgs) {
-        // If used as a constructor: preserve prototype
-        const isNew = this instanceof boundFunction;
-        const context = isNew ? this : (thisArg ?? globalThis);
+    return function (...laterArgs) {
+        const context = thisArg ?? globalThis;
 
         context[tempFnKey] = originalFn;
         const result = context[tempFnKey](...argArray, ...laterArgs);
@@ -18,4 +16,18 @@ Function.prototype.myBind = function (thisArg, ...argArray) {
 
         return result;
     };
-}
+};
+
+
+const john = {
+    age: 42,
+    getAge: function () {
+        return this.age;
+    },
+};
+
+const unboundGetAge = john.getAge;
+console.log(unboundGetAge()); // undefined
+
+const boundGetAge = john.getAge.myBind(john);
+console.log(boundGetAge()); // 42
