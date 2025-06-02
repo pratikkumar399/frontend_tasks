@@ -8,7 +8,7 @@ function throttle(functionToBePassed, delay) {
         // if the event hasn't occurred yet
         if (!startId) {
             // invoke the function
-            functionToBePassed(...args);
+            functionToBePassed.apply(this, args);
 
             // a startId get assigned and remains until the delay has passed
             startId = setTimeout(() => {
