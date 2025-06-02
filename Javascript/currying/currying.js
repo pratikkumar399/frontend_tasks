@@ -17,18 +17,24 @@ add(3, 4);
  * @return {Function}
  */
 
-export default function curry(fn) {
-    // curried is the inner function that keeps collecting arguments
+export default function curry(func) {
     return function curried(...args) {
-        // If enough arguments are collected, call the original function
-        if (args.length >= fn.length) {
-            return fn.apply(this, args);
+        // if criteria fulfilled then, call the function
+        if (args.length >= func.length) {
+            return func.apply(this, args);
         }
-
-        // Otherwise, return a function to collect more arguments
-        return function (...nextArgs) {
-            // Combine previously collected args with the new ones
-            return curried.apply(this, [...args, ...nextArgs]);
-        };
+        // if more arguments are needed, return a function that takes more arguments
+        return (...args2) => curried.apply(this, [...args, ...args2]);
     };
 }
+
+
+function add(a, b) {
+    return a + b;
+}
+
+const curriedAdd = curry(add);
+curriedAdd(3)(4); // 7
+
+const alreadyAddedThree = curriedAdd(3);
+alreadyAddedThree(4); // 7
