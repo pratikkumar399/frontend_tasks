@@ -12,12 +12,9 @@ function add2(a) {
 }
 add(3, 4);
 
-/**
- * @param {Function} func
- * @return {Function}
- */
 
-export default function curry(func) {
+// variant 1 -> we receive function as argument
+function curry(func) {
     return function curried(...args) {
         // if criteria fulfilled then, call the function
         if (args.length >= func.length) {
@@ -38,3 +35,35 @@ curriedAdd(3)(4); // 7
 
 const alreadyAddedThree = curriedAdd(3);
 alreadyAddedThree(4); // 7
+
+
+// variant 2 -> 
+
+function curried(a) {
+    return function (b) {
+        if (b === undefined) {
+            return a;
+        }
+        else {
+            curried(a + b);
+        }
+    }
+}
+
+const res = curried(1)(2)(3)(4)();
+
+
+// 3rd variant
+const curriedThree = (...args) => {
+
+    return (...args2) => {
+        if (args2.length === 0) {
+            return args.reduce((sum, val) => sum + val, 0);
+        }
+        else {
+            return curriedThree(args.reduce((sum, val) => sum + val, 0) + args2.reduce((sum, val) => sum + val, 0));
+        }
+
+    }
+
+}
