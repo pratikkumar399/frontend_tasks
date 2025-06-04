@@ -1,31 +1,30 @@
 function throttle(fn, delay, option = { leading: true, trailing: true }) {
     const { leading, trailing } = option;
-    let lastTimerId;
-    let lastArgs;
+    let lastTimerId = null;
+    let lastArgs = null;
+    let lastContext = null;
 
     return function (...args) {
-        const waitFn = () => {
+        lastArgs = args;
+        lastContext = this;
+
+        const invokeTrailing = () => {
             if (trailing && lastArgs) {
-                fn.apply(this, lastArgs); // or fn(...args);
-                lastArgs = null; // reset lastArgs
-                lastTimerId = setTimeout(waitFn, delay); // executes the 
-            } else {
-                lastTimerId = null;
+                fn.apply(lastContext, lastArgs);
+                lastArgs = null;
             }
+            lastTimerId = null; // clear timer to allow new calls
         };
 
-        // case : leading case
+        // Leading case: if no timer and leading is true, invoke immediately
         if (!lastTimerId && leading) {
-            // call immediately
-            fn.apply(this, args);
-        } else {
-            // storing the last arguments for the trailing case
-            lastArgs = args;
+            fn.apply(lastContext, lastArgs);
+            lastArgs = null; // already used
         }
 
-        // case : trailing case
+        // Set the timer if not already set
         if (!lastTimerId) {
-            lastTimerId = setTimeout(waitFn, delay);
+            lastTimerId = setTimeout(invokeTrailing, delay);
         }
     };
 }
