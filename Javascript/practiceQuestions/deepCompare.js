@@ -25,5 +25,13 @@ function deepCompare(obj1 , obj2){
         return false;
     }
 
-    return keys1.every((key) => deepCompare(obj1[key] , obj2[key]));
+    return keys1.every(key =>
+       deepCompare(obj1[key], obj2[key])
+    );
+
 }
+
+const obj1 = { user: { name: "Pratik" } };
+const obj2 = { user: { name: "Pratik", age: 23 } };
+
+console.log(deepCompare(obj1, obj2));
