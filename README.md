@@ -32,7 +32,8 @@ A comprehensive collection of essential frontend interview topics and coding pat
 | [Binary Search](./DsAlgoForFrontend/BinarySearch)                     | Efficiently search elements in sorted arrays            |
 | [Graphs](./DsAlgoForFrontend/Graph)                                   | Explore graph traversal techniques                      |
 | [Recursion & Backtracking](./DsAlgoForFrontend/recursionBacktracking) | Solve complex problems using recursion and backtracking |
-
+| [DP](./DsAlgoForFrontend/Dp) | Dynamic Programming                    | Solve complex problems using dynamic programming        |
+| [Hashing](./DsAlgoForFrontend/Hashing) | Efficiently search elements in sorted arrays            |
 
 ## React Questions
 
