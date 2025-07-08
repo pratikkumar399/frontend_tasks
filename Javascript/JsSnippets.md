@@ -53,3 +53,21 @@ here
 </summary>
 
 </details>
+
+<hr>
+
+3. What is the output in this case?
+```javascript
+let a = [];
+let b = [];
+
+console.log(a == b);
+console.log(a === b);
+
+```
+<details> <summary>Output</summary>
+
+```
+false
+false
+```
