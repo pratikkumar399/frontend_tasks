@@ -42,3 +42,7 @@ A comprehensive collection of essential frontend interview topics and coding pat
 * Infinite Scrolling using Intersection Observer
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/mystifying-bardeen-k7z37z)
 
+
+
+
+####  `Made with ❤️ by Pratik Rai`
