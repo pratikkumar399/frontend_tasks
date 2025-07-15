@@ -29,6 +29,7 @@ A comprehensive collection of essential frontend interview topics and coding pat
 
 | Topic                                                                 | Description                                             |
 | --------------------------------------------------------------------- | ------------------------------------------------------- |
+| [Arrays](./DsAlgoForFrontend/Array)                                   | Fundamental data structure for storing elements         |
 | [Binary Search](./DsAlgoForFrontend/BinarySearch)                     | Efficiently search elements in sorted arrays            |
 | [Graphs](./DsAlgoForFrontend/Graph)                                   | Explore graph traversal techniques                      |
 | [Recursion & Backtracking](./DsAlgoForFrontend/recursionBacktracking) | Solve complex problems using recursion and backtracking |
