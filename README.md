@@ -40,8 +40,10 @@ A comprehensive collection of essential frontend interview topics and coding pat
 
 * **Nested Folder Structure Example**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/silly-blackburn-gygvnx)
-* Infinite Scrolling using Intersection Observer
+* **Infinite Scrolling using Intersection Observer**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/mystifying-bardeen-k7z37z)
+* **Pagination Client side**
+  [View on CodeSandbox](https://codesandbox.io/p/sandbox/y873rn)
 
 
 
