@@ -1,3 +1,9 @@
+// it takes an array of arguments, and then a promise is returned
+// all the resolved promises are returned in exact order
+// and it a promise fails, all the promises are immediately resolved
+
+
+
 export default function promiseAll(iterable) {
   return new Promise((resolve, reject) => {
     const result = [];
