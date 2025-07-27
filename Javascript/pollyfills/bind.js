@@ -17,7 +17,7 @@ Function.prototype.myBind = function (thisArg, ...argArray) {
         return result;
     };
 };
-
+    
 
 const john = {
     age: 42,
