@@ -12,7 +12,6 @@ const convertToObj = (input) => {
 
     arr.forEach((item, index) => {
         if (index === 0) return; 
-
         obj = { [item]: obj };
     });
 
