@@ -23,12 +23,12 @@ function memoize(func) {
 
     return function (...args) {
         const key = JSON.stringify(args); // serialize the arguments as keys
-
         if (cache.has(key)) {
             return cache.get(key);
         }
 
-        const result = func.apply(this, args);
+        const result = func(...args);
+        console.log(args,"result");
         cache.set(key, result);
         return result;
     }

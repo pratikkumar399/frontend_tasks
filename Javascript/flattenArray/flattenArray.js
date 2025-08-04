@@ -27,6 +27,18 @@ function flat1(arr, depth = 1) {
 }
 
 
+function withoutDepthFlat(arr){
+    let ans = [];
+    arr.forEach((item) => {
+        if(Array.isArray(item)){
+            ans.push(withoutDepthFlat(...item));
+        }
+        else{
+            ans.push(item);
+        }
+    })
+}
+
 // easy method
 const sampleData = [1, 2, 3, [4, 5, [6, 7]]];
 const flatten = sampleData.flat();
