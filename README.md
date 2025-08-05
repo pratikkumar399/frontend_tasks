@@ -36,14 +36,17 @@ A comprehensive collection of essential frontend interview topics and coding pat
 | [DP](./DsAlgoForFrontend/Dp) | Dynamic Programming                    | Solve complex problems using dynamic programming        |
 | [Hashing](./DsAlgoForFrontend/Hashing) | Efficiently search elements in sorted arrays            |
 
-## React Questions
+## React Machine Coding Round Questions
 
-* **Nested Folder Structure Example**
+* **Nested Folder Structure**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/silly-blackburn-gygvnx)
 * **Infinite Scrolling using Intersection Observer**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/mystifying-bardeen-k7z37z)
 * **Pagination Client side**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/y873rn)
+* **Grid Lights**
+  [View on CodeSandbox](https://codesandbox.io/p/sandbox/64f5yg)
+
 
 
 
