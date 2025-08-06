@@ -12,7 +12,6 @@ A comprehensive collection of essential frontend interview topics and coding pat
 [Js Snippets](./Javascript/JsSnippets.md)
 
 
-
 ## JavaScript Concepts
 
 | Topic                                                         | Description                                                        |
@@ -46,7 +45,8 @@ A comprehensive collection of essential frontend interview topics and coding pat
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/y873rn)
 * **Grid Lights**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/64f5yg)
-
+* **Image carousel**
+  [View on CodeSandbox](https://codesandbox.io/p/sandbox/xchc55)
 
 
 
