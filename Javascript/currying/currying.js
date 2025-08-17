@@ -45,7 +45,7 @@ function curried(a) {
             return a;
         }
         else {
-            curried(a + b);
+            return curried(a + b);
         }
     }
 }
@@ -55,7 +55,6 @@ const res = curried(1)(2)(3)(4)();
 
 // 3rd variant
 const curriedThree = (...args) => {
-
     return (...args2) => {
         if (args2.length === 0) {
             return args.reduce((sum, val) => sum + val, 0);
@@ -64,6 +63,29 @@ const curriedThree = (...args) => {
             return curriedThree(args.reduce((sum, val) => sum + val, 0) + args2.reduce((sum, val) => sum + val, 0));
         }
 
-    }
+    }   
 
 }
+
+console.log(curriedThree(1,3)(2)(3)(4)(5)() + 1);
+
+
+// 4th variant
+
+const currying = (sum = 0) => {
+  const inner = (...args) =>
+    args.length === 0
+      ? sum
+      : currying(sum + args.reduce((a, b) => a + b, 0));
+
+  // handling type coercion
+  inner.valueOf = () => sum;
+  inner.toString = () => String(sum);
+
+  return inner;
+};
+
+
+console.log(currying(1, 3)(3)(4, 5)());   // 16
+console.log(currying(1, 3)(3)(4, 5) + 1); // 17
+console.log(currying(10)(20, 30)(40) + 0); // 100
