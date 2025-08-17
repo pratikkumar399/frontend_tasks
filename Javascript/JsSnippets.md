@@ -71,3 +71,65 @@ console.log(a === b);
 false
 false
 ```
+</details>
+
+<hr>
+
+4. What is the output in this case?
+```javascript
+let temp = 'outer value';
+if (true) {
+  console.log(temp);
+  let temp = 'inner value'; 
+  console.log(temp);
+}
+console.log(temp);
+```
+
+<details> <summary>Output</summary>
+
+```
+ReferenceError: Cannot access 'temp' before initialization
+```
+</details>
+
+5. What is the output in this case?
+```javascript
+let temp = 'outer value';
+if (true) {
+  console.log(temp);
+  var temp = 'inner value';
+  console.log(temp);
+}
+console.log(temp);
+```
+<details> <summary>Output</summary>
+
+```
+SyntaxError: Identifier 'temp' has already been declared
+```
+</details>
+
+<hr>
+
+6. What is the output in this case?
+```javascript
+
+var temp = 'outer value';
+if (true) {
+  console.log(temp);
+  var temp = 'inner value'; 
+  console.log(temp);
+}
+console.log(temp);
+
+```
+
+<details> <summary>Output</summary>
+
+```
+outer value
+inner value
+inner value
+```
+</details>
