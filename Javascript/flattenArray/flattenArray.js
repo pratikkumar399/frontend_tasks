@@ -13,6 +13,20 @@ function flat(arr, depth = 1) {
     return ans;
 }
 
+function flatten(val) {
+  let valArr = [];
+
+    Array.isArray(val) && val.forEach(value => {
+        if(Array.isArray(value)){
+            valArr.push(...flatten(value));
+        }
+        else{
+            valArr.push(value);
+        }
+    })
+  return valArr;
+}
+
 
 function flat1(arr, depth = 1) {
     let ans = [];
