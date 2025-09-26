@@ -34,16 +34,20 @@ function promiseAll(iterable) {
 
 // Resolved example.
 const p0 = Promise.resolve(3);
-const p1 = 42;
+const p1 = Promise.reject("rejected");
 const p2 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('foo');
   }, 100);
 });
 
-async function result(){
-  const ans = await promiseAll([p0, p1, p2]); // [3, 42, 'foo']}
-  console.log(ans);
+async function result() {
+  try {
+    const ans = await promiseAll([p0, p1, p2]);
+    console.log("Resolved:", ans);
+  } catch (err) {
+    console.error("Rejected:", err);
+  }
 }
 
 result();
