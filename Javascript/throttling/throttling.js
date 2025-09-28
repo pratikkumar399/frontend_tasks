@@ -1,3 +1,25 @@
+/*
+    throttling basically means that you are setting a limit on the number of times
+    a particular function is called in a certain interval of time
+*/
+
+
+// simplest throttling
+
+const throttleSimple= (callbackFn, delay) => {
+    let startId = null;
+    return () => {
+        if(!startId){
+            callbackFn();
+            startId = setTimeout(() => {
+                startId = null;
+            }, delay)
+        }
+    }
+}
+
+
+
 // simple throttling
 
 function throttle(functionToBePassed, delay) {
@@ -18,6 +40,59 @@ function throttle(functionToBePassed, delay) {
         }
     }
 }
+
+
+// throttle without setTimeout
+
+const throttleWithoutTimeout = (callbackFn , delay) => {
+
+    let lastCall = 0;
+
+    return () => {
+        let now = Date.now();
+        if(now - lastCall >= delay){
+            callbackFn();
+            lastCall = now;
+        }
+    }
+}
+
+// => leading condition : invoke callback function immediately after the first event
+// => trailing condition : invoke the callback after last event
+
+const throttleWithLeadingTrailing = (callbackFn, delay, options={}) => {
+    const {leading = true , trailing = true } = options;
+    const thisVal = this ?? globalThis;
+
+    let lastCall = 0;
+    let timeoutId = "";
+
+    return (...args) => {
+        let now = Date.now();
+
+        // check if it is the first invocation
+        if(!leading && lastCall == 0){
+            lastCall = now;
+        }   
+
+        if(now - lastCall >= delay){
+            callbackFn.apply(thisVal, args);
+            lastCall = now;
+            // to ensure that only one condition runs
+            clearTimeout(timeoutId);
+            timeoutId = "";
+        }else if(trailing && !timeoutId){
+            timeoutId = setTimeout(() => {
+                callbackFn.apply(thisVal, args);
+                lastCall = leading ? now : 0;
+                // make sure the timeoutId is reset
+                timeoutId = ""
+            }, delay)
+        }
+    }
+
+}
+
 
 
 // throttling function to preserve the last event
