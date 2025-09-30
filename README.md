@@ -18,7 +18,7 @@ A comprehensive collection of essential frontend interview topics and coding pat
 | ------------------------------------------------------------- | ------------------------------------------------------------------ |
 | [Currying](./Javascript/currying/currying.js)                 | Transform a function with multiple arguments into nested functions |
 | [Debouncing](./Javascript/debouncing/debouncing.js)           | Improve performance by limiting the rate of function execution     |
-| [Events in JavaScript](./Javascript/eventsInJs/eventsInJs.js) | Deep dive into how JavaScript handles events                       |
+| [Events in JavaScript](./Javascript/eventsInJs/events.js) | Deep dive into how JavaScript handles events                       |
 | [Flatten an Array](./Javascript/flattenArray/flattenArray.js) | Recursively flatten deeply nested arrays                           |
 | [Polyfills](./Javascript/polyfills)                           | Manual implementations of native JavaScript features               |
 | [Throttling](./Javascript/throttling)                         | Control the rate at which a function is called                     |
