@@ -12,11 +12,12 @@ function debounce(func, wait) {
     // debounce with wait
     let timeoutId = null;   
 
-    return function (...args) {
+    return  (...args) => {
+        let self = this;
         clearTimeout(timeoutId); // clearTimeout in case a new action is registered
 
         timeoutId = setTimeout(() => {
-            func.apply(this, args);
+            func.apply(self, args);
         }, wait);
     }
 
