@@ -49,6 +49,8 @@ A comprehensive collection of essential frontend interview topics and coding pat
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/xchc55)
 * **Tic Tac Toe Game**
   [View on CodeSandbox](https://codesandbox.io/p/sandbox/sgff8n)
+* **AutoComplete Search/Typeahead component**
+  [View on CodeSandbox](https://codesandbox.io/p/sandbox/autocomplete-search-z436hd)
 
 
 
