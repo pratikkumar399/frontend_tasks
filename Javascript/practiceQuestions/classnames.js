@@ -34,8 +34,8 @@ export default function classNames(...args) {
         }
       }
     }
-
-    return;
   });
+
+
   return validClassName.join(" ");
 }
