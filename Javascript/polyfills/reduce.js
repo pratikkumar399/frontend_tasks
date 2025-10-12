@@ -35,4 +35,4 @@ Array.prototype.myReduce = function (callbackFn, initialValue) {
 
 //test cases 
 [1, 2, 3].myReduce((prev, curr) => prev + curr, 0); // 6
-[1, 2, 3].myReduce((prev, curr) => prev + curr, 4); // 10
+console.log([1, 2, 3].myReduce((prev, curr) => prev + curr)); // 10
