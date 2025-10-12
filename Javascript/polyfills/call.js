@@ -9,16 +9,13 @@ Function.prototype.myCall = function (thisArg, ...argArray) {
         throw new TypeError("myCall must be called on a function");
     }
 
-    thisArg = thisArg ?? globalThis;
-
-    const fnSymbol = Symbol("tempFn");
-    thisArg[fnSymbol] = this;
+    thisArg.func = this;
 
     // Call the function and capture the return value
-    const result = thisArg[fnSymbol](...argArray);
+    const result = thisArg.func(...argArray);
 
     // Cleanup the temp function property
-    delete thisArg[fnSymbol];
+    delete thisArg.func;
 
     return result;
 };

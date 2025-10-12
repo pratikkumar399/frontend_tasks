@@ -4,15 +4,13 @@
  * @return {Function}
  */
 Function.prototype.myBind = function (thisArg, ...argArray) {
-    const tempFnKey = Symbol("boundFn");
     const originalFn = this;
 
     return function (...laterArgs) {
-        const context = thisArg ?? globalThis;
-
-        context[tempFnKey] = originalFn;
-        const result = context[tempFnKey](...argArray, ...laterArgs);
-        delete context[tempFnKey];
+        
+        thisArg.tempFnKey = originalFn;
+        const result = context.tempFnKey(...argArray, ...laterArgs);
+        delete context.tempFnKey;
 
         return result;
     };

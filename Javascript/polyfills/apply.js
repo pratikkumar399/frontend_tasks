@@ -5,16 +5,24 @@
  * @return {any}
  */
 Function.prototype.myApply = function (thisArg, argArray) {
-    thisArg = thisArg ?? globalThis;
 
-    const tempFn = Symbol(); // lets have a symbol, a unique key for each fn
-    thisArg[tempFn] = this; // assign the context of the function
+    thisArg.tempFn = this; // assign the context of the function
 
     const result = Array.isArray(argArray)
-        ? thisArg[tempFn](...argArray)
-        : thisArg[tempFn](); // Handle null/undefined argArray
+        ? thisArg.tempFn(...argArray)
+        : thisArg.tempFn(); // Handle null/undefined argArray
 
-    delete thisArg[tempFn];
+    delete thisArg.tempFn;
     return result;
 
 };
+
+let obj = {
+    age : 21
+}
+
+function whatIsTheAge(age){
+    console.log(`This age of ${this.name} person is ${age}`)
+}
+
+whatIsTheAge.myApply(obj, [21])
