@@ -11,7 +11,6 @@ A comprehensive collection of essential frontend interview topics and coding pat
 ## Checkout JS snippets
 [Js Snippets](./Javascript/JsSnippets.md)
 
-
 ## JavaScript Concepts
 
 | Topic                                                         | Description                                                        |
